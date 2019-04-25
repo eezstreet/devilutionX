@@ -178,9 +178,6 @@ add_executable(devilutionx
   SourceX/dvlnet/packet.cpp
   SourceX/dvlnet/base.cpp
   SourceX/dvlnet/frame_queue.cpp
-  SourceX/dvlnet/tcp_client.cpp
-  SourceX/dvlnet/tcp_server.cpp
-  SourceX/dvlnet/udp_p2p.cpp
   SourceX/DiabloUI/credits.cpp
   SourceX/DiabloUI/diabloui.cpp
   SourceX/DiabloUI/dialogs.cpp
@@ -195,7 +192,6 @@ add_executable(devilutionx
 target_include_directories(devilution PUBLIC Source SourceS)
 target_include_directories(devilutionx PRIVATE
   SourceX
-  3rdParty/asio/include
   3rdParty/Radon/Radon/include
   3rdParty/libsmacker)
 
@@ -217,7 +213,6 @@ target_compile_definitions(devilution PUBLIC
   "$<$<BOOL:${DEBUG}>:_DEBUG>"
   # Skip fades and other fluff
   "$<$<BOOL:${FASTER}>:FASTER>")
-target_compile_definitions(devilutionx PRIVATE ASIO_STANDALONE)
 
 if(ASAN)
   target_compile_options(devilution PUBLIC -fsanitize=address -fsanitize-recover=address)
