@@ -1220,7 +1220,7 @@ void InitControlPan()
 	panelflag = 0;
 	lvlbtndown = 0;
 	pPanelButtons = LoadFileInMem("CtrlPan\\Panel8bu.CEL", 0);
-	for (i = 0; i < sizeof(panbtn); i++)
+	for (i = 0; i < sizeof(panbtn)/sizeof(panbtn[0]); i++)
 		panbtn[i] = 0;
 	panbtndown = 0;
 	if (gbMaxPlayers == 1)
@@ -1228,7 +1228,7 @@ void InitControlPan()
 	else
 		numpanbtns = 8;
 	pChrButtons = LoadFileInMem("Data\\CharBut.CEL", 0);
-	for (i = 0; i < sizeof(chrbtn); i++)
+	for (i = 0; i < sizeof(chrbtn)/sizeof(chrbtn[0]); i++)
 		chrbtn[i] = 0;
 	chrbtnactive = FALSE;
 	pDurIcons = LoadFileInMem("Items\\DurIcons.CEL", 0);

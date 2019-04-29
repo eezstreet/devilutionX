@@ -284,7 +284,8 @@ char *fault_get_error_type(DWORD dwMessageId, LPSTR lpString1, DWORD nSize)
 
 void *fault_set_filter(void *unused)
 {
-	lpTopLevelExceptionFilter = SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)TopLevelExceptionFilter);
+	//lpTopLevelExceptionFilter = SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)TopLevelExceptionFilter);
+	lpTopLevelExceptionFilter = TopLevelExceptionFilter;
 	return unused;
 }
 

@@ -20,15 +20,15 @@ void TriggerBreak()
 #ifdef _DEBUG
 	LPTOP_LEVEL_EXCEPTION_FILTER pFilter;
 
-	pFilter = SetUnhandledExceptionFilter(BreakFilter);
-#ifdef USE_ASM
+	//pFilter = SetUnhandledExceptionFilter(BreakFilter);
+//#ifdef USE_ASM
 	__asm {
 		int		3
 	}
-#else
-	__debugbreak();
-#endif
-	SetUnhandledExceptionFilter(pFilter);
+//#else
+//	__debugbreak();
+//#endif
+	//SetUnhandledExceptionFilter(pFilter);
 #endif
 }
 
